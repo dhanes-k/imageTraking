@@ -1,0 +1,120 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR.js Image Tracking with Video, Image, and Text</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+  <a-scene embedded arjs='trackingMethod: best; sourceType: webcam;'>
+    
+    <a-marker
+      type='pattern'
+      value='5'
+      preset='custom'
+      url='./assets/marker.patt'>
+      
+      <a-entity
+        gltf-model="url(./assets/dragon.glb)"
+        scale="0.05 0.05 0.05"
+        position="0 0 0"
+        rotation="0 45 0">
+      </a-entity>
+      
+      <a-video src="./assets/krishana.mp4" position="3 1 0" width="2" height="1.2"></a-video>
+      
+      <a-image src="./assets/rudram.jpg" position="-3 -1 0" width="2" height="1"></a-image>
+      
+      <a-text value="Hello world!!" position="0 1.5 3" align="center" color="yellow"></a-text>
+      
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+
+  <video id="my-video" src="path_to_your_video.mp4" autoplay loop="true" style="display: none;"></video>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AR.js with 3D Animated Model</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body style="margin: 0; overflow: hidden">
+    <!-- AR scene -->
+    <a-scene embedded arjs="trackingMethod: best; sourceType: webcam;">
+      <!-- Marker for image tracking -->
+      <a-marker
+        type="pattern"
+        value="5"
+        preset="custom"
+        url="./assets/pattern-diwali.patt"
+      >
+        <!-- 3D model with animation (GLB format) -->
+        <a-entity
+          gltf-model="url(./assets/dragon2.glb)"
+          scale="0.05 0.05 0.05"
+          position="0 0 0"
+          rotation="-60 0 0"
+          animation-mixer="clip: Idle; loop: repeat"
+        >
+        </a-entity>
+
+        <!-- Video element -->
+        <a-video
+          src="./assets/krishana.mp4"
+          position="3 0 0"
+          width="3"
+          height="2"
+          rotation="-90 0 0"
+          src="./assets/krishana.mp4"
+          autoplay
+          loop
+          controls
+          crossorigin="anonymous"
+          playsinline
+          style="max-width: 100%; height: auto; object-fit: cover"
+        ></a-video>
+
+        <!-- Image element -->
+        <a-image
+          src="./assets/rudram.jpg"
+          position="-3 0 0"
+          width="2"
+          height="2"
+          rotation="-90 0 0"
+        ></a-image>
+
+        <!-- Text element -->
+        <a-text
+          value="Hello AR!"
+          position="0 0 1"
+          align="center"
+          color="lightgreen"
+          rotation="-90 0 0"
+        ></a-text>
+      </a-marker>
+
+      <!-- Camera -->
+      <a-entity camera></a-entity>
+    </a-scene>
+
+    <!-- Define the video source -->
+    <video
+      id="my-video"
+      src="./assets/krishana.mp4"
+      autoplay
+      loop="true"
+      style="display: none"
+    ></video>
+  </body>
+</html>

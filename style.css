@@ -1,0 +1,6 @@
+a-video {
+    max-width: 100%;  /* Scale video to fit the width of its container */
+    height: auto;     /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the entire area */
+  }
+  

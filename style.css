@@ -3,4 +3,4 @@ a-video {
     height: auto;     /* Maintain aspect ratio */
     object-fit: cover; /* Cover the entire area */
   }
-  
+

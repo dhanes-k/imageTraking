@@ -39,82 +39,106 @@
 </body>
 </html> -->
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AR.js with 3D Animated Model</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body style="margin: 0; overflow: hidden">
     <!-- AR scene -->
-    <a-scene embedded arjs="trackingMethod: best; sourceType: webcam;">
-      <!-- Marker for image tracking -->
-      <a-marker
-        type="pattern"
-        value="5"
-        preset="custom"
-        url="./assets/pattern-diwali.patt"
-      >
-        <!-- 3D model with animation (GLB format) -->
-        <a-entity
-          gltf-model="url(./assets/dragon2.glb)"
-          scale="0.05 0.05 0.05"
-          position="0 0 0"
-          rotation="-60 0 0"
-          animation-mixer="clip: Idle; loop: repeat"
+
+    <div class="container">
+      <a-scene embedded arjs="trackingMethod: best; sourceType: webcam;">
+        <!-- Marker for image tracking -->
+        <a-marker
+          type="pattern"
+          value="5"
+          preset="custom"
+          url="./assets/pattern-diwali.patt"
         >
-        </a-entity>
+          <!-- 3D model with animation (GLB format) -->
+          <a-entity
+            gltf-model="url(./assets/krishna_3.glb)"
+            scale="1 1 1"
+            position="0 -0.5 0.2"
+            rotation="-60 0 0"
+          >
+          </a-entity>
 
-        <!-- Video element -->
-        <a-video
-          src="./assets/krishana.mp4"
-          position="3 0 0"
-          width="3"
-          height="2"
-          rotation="-90 0 0"
-          src="./assets/krishana.mp4"
-          autoplay
-          loop
-          controls
-          crossorigin="anonymous"
-          playsinline
-          style="max-width: 100%; height: auto; object-fit: cover"
-        ></a-video>
+          <!-- Video element -->
+          <a-video
+            src="./assets/krishana.mp4"
+            position="2 0 0"
+            width="1.5"
+            height="1.2"
+            rotation="-90 0 0"
+            autoplay
+            loop
+            controls
+            crossorigin="anonymous"
+            playsinline
+            style="max-width: 100%; height: auto; object-fit: cover"
+          ></a-video>
 
-        <!-- Image element -->
-        <a-image
-          src="./assets/rudram.jpg"
-          position="-3 0 0"
-          width="2"
-          height="2"
-          rotation="-90 0 0"
-        ></a-image>
+          <!-- Image element -->
+          <a-image
+            src="./assets/rudram.jpg"
+            position="-2 0 0"
+            width="1.2"
+            height="1.2"
+            rotation="-90 0 0"
+          ></a-image>
 
-        <!-- Text element -->
-        <a-text
-          value="Hello AR!"
-          position="0 0 1"
-          align="center"
-          color="lightgreen"
-          rotation="-90 0 0"
-        ></a-text>
-      </a-marker>
+          <a-entity
+            gltf-model="url(./assets/diwali_3d_poster.glb)"
+            scale="0.15 0.15 0.15"
+            position="0 0 0.5"
+            rotation="-60 0 0"
+          >
+          </a-entity>
+          <a-entity
+            gltf-model="url(./assets/oil_lamp.glb)"
+            scale="0.15 0.15 0.15"
+            position="1 0 0.5"
+            rotation="-60 0 0"
+          >
+          </a-entity>
 
-      <!-- Camera -->
-      <a-entity camera></a-entity>
-    </a-scene>
+          <a-entity
+            gltf-model="url(./assets/oil_lamp.glb)"
+            scale="0.15 0.15 0.15"
+            position="0 0 0.5"
+            rotation="-60 0 0"
+          >
+          </a-entity>
+          <a-entity
+            gltf-model="url(./assets/oil_lamp.glb)"
+            scale="0.15 0.15 0.15"
+            position="-1 0 0.5"
+            rotation="-60 0 0"
+          >
+          </a-entity>
 
-    <!-- Define the video source -->
-    <video
-      id="my-video"
-      src="./assets/krishana.mp4"
-      autoplay
-      loop="true"
-      style="display: none"
-    ></video>
+          <a-entity
+            gltf-model="url(./assets/firework_booth.glb)"
+            scale="0.15 0.15 0.15"
+            position="0.5 -0.5 0.1"
+            rotation="-60 0 0"
+          >
+          </a-entity>
+
+        </a-marker>
+
+        <!-- Camera -->
+        <a-entity camera="fov: 80"></a-entity>
+      </a-scene>
+    </div>
   </body>
+  <script>
+
+  </script>
 </html>

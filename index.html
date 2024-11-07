@@ -9,6 +9,8 @@
 
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
     <script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
   </head>
@@ -23,11 +25,10 @@
       id="scene"
     >
       <a-assets>
-        <a-asset-item
-          id="bowser"
-          src="./krishna.glb"
-        >
-        </a-asset-item>
+        <a-asset-item id="krishna" src="./krishnaWithBase2.glb"> </a-asset-item>
+        <a-asset-item id="man" src="./buster_drone/scene.gltf"> </a-asset-item>
+        <img id="left-image" src="reality.png" />
+        <img id="right-image" src="rudram.jpg" />
       </a-assets>
 
       <a-marker
@@ -39,15 +40,45 @@
         id="markerA"
       >
         <a-entity
-          id="bowser-model"
-          gltf-model="#bowser"
+          id="krishna-model"
+          gltf-model="#krishna"
           position="0 0 0"
-          scale="0.05 0.05 0.05"
+          scale="0.06 0.06 0.06"
           rotation="-90 0 0"
           class="clickable"
           gesture-handler
         >
         </a-entity>
+        <a-entity
+          id="man-model"
+          gltf-model="#man"
+          position="0 0 0"
+          scale="0.8 0.8 0.8"
+          rotation="-90 0 0"
+          class="clickable"
+          animation-mixer="clip: *; loop: repeat; repetitions: Infinity"
+          gesture-handler
+        >
+        </a-entity>
+
+        <a-image
+          src="#left-image"
+          position="-1 0 -0.5"
+          width="2"
+          height="2"
+          scale="0.5 0.5 0.5"
+          rotation="-90 0 0"
+        ></a-image>
+
+        <!-- Right Image -->
+        <a-image
+          src="#right-image"
+          position="1.3 0 -0.5"
+          width="1.5"
+          height="1.5"
+          scale="0.5 0.5 0.5"
+          rotation="-90 0 0"
+        ></a-image>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>

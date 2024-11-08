@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>Gesture Interactions - A-Frame & AR.js</title>
@@ -25,60 +24,150 @@
       id="scene"
     >
       <a-assets>
-        <a-asset-item id="krishna" src="./krishnaWithBase2.glb"> </a-asset-item>
-        <a-asset-item id="man" src="./buster_drone/scene.gltf"> </a-asset-item>
-        <img id="left-image" src="reality.png" />
-        <img id="right-image" src="rudram.jpg" />
+        <a-asset-item
+          id="treeWithGifts"
+          src="./christmas/gifts_under_christmas_tree/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="tree2"
+          src="./christmas/christmas_tree_2/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="tree3"
+          src="./christmas/neon_christmas_tree/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="dear"
+          src="./christmas/elk_wip/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="santhavehicle"
+          src="./christmas/santa_clauss_sleigh/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="carousel"
+          src="./christmas/christmas_carousel/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="santa"
+          src="./christmas/santa_model/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="tree4"
+          src="./christmas/tannenbaum_-_merry_christmas/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="snowflakes"
+          src="./christmas/looping_snow_2/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="birds"
+          src="./christmas/bird/scene.gltf"
+        ></a-asset-item>
       </a-assets>
+      <!-- Cursor for click interactions -->
+      <a-entity cursor="rayOrigin: mouse"></a-entity>
 
-      <a-marker
-        type="pattern"
-        url="rudra.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        id="markerA"
-      >
+      <a-marker type="pattern" url="rudra.patt" emitevents="true" id="markerA">
         <a-entity
-          id="krishna-model"
-          gltf-model="#krishna"
+          id="treeWithGifts"
+          gltf-model="#treeWithGifts"
           position="0 0 0"
-          scale="0.06 0.06 0.06"
+          scale="0.2 0.2 0.2"
           rotation="-90 0 0"
-          class="clickable"
           gesture-handler
         >
         </a-entity>
         <a-entity
-          id="man-model"
-          gltf-model="#man"
-          position="0 0 0"
-          scale="0.8 0.8 0.8"
+          id="dear"
+          gltf-model="#dear"
+          position="-0.4 0 0"
+          scale="0.1 0.1 0.1"
           rotation="-90 0 0"
-          class="clickable"
           animation-mixer="clip: *; loop: repeat; repetitions: Infinity"
           gesture-handler
         >
         </a-entity>
-
-        <a-image
-          src="#left-image"
-          position="-1 0 -0.5"
-          width="2"
-          height="2"
+        <a-entity
+          id="santhavehicle"
+          gltf-model="#santhavehicle"
+          position="0.6 0.2 -0.1"
+          scale="0.001 0.001 0.001"
+          rotation="0 -90 90"
+          animation-mixer="clip: *; loop: repeat; repetitions: Infinity"
+          gesture-handler
+        >
+        </a-entity>
+        <a-entity
+          id="santa"
+          gltf-model="#santa"
+          position="0.6 0.4 -0.1"
+          scale="0.18 0.18 0.18"
+          rotation="-90 0 0"
+          animation-mixer="clip: *; loop: repeat; repetitions: Infinity"
+          gesture-handler
+        >
+        </a-entity>
+        <a-entity
+          id="tree4"
+          gltf-model="#tree4"
+          position="-0.6 0.4 -0"
+          scale="0.004 0.004 0.004"
+          rotation="-90 0 0"
+          animation-mixer="clip: *; loop: repeat; repetitions: Infinity"
+          gesture-handler
+        >
+        </a-entity>
+        <a-entity
+          id="tree3"
+          gltf-model="#tree3"
+          position="-0.2 1 -0"
+          scale="0.08 0.08 0.08"
+          rotation="-90 0 0"
+          animation-mixer="clip: *; loop: repeat; repetitions: Infinity"
+          gesture-handler
+        >
+        </a-entity>
+        <a-entity
+          id="dear"
+          gltf-model="#dear"
+          position="0.6 0.8 -0.1"
+          scale="0.1 0.1 0.1"
+          rotation="-90 0 0"
+          animation-mixer="clip: *; loop: repeat; repetitions: Infinity"
+          gesture-handler
+        >
+        </a-entity>
+        <a-entity
+          id="tree2"
+          gltf-model="#tree2"
+          position="1 0.4 -0.1"
+          scale="0.15 0.15 0.15"
+          rotation="-90 0 0"
+          animation-mixer="clip: *; loop: repeat; repetitions: Infinity"
+          gesture-handler
+        >
+        </a-entity>
+        <a-entity
+          id="snowflakes"
+          gltf-model="#snowflakes"
+          position="0 0 0"
+          scale="0.1 0.1 0.1"
+          rotation="-90 0 0"
+          animation-mixer="clip: *; loop: repeat; repetitions: Infinity"
+          gesture-handler
+        >
+        </a-entity>
+        <a-entity
+          id="birds"
+          gltf-model="#birds"
+          position="0 0 -1.2"
           scale="0.5 0.5 0.5"
           rotation="-90 0 0"
-        ></a-image>
-
-        <!-- Right Image -->
-        <a-image
-          src="#right-image"
-          position="1.3 0 -0.5"
-          width="1.5"
-          height="1.5"
-          scale="0.5 0.5 0.5"
-          rotation="-90 0 0"
-        ></a-image>
+          animation-mixer="clip: *; loop: repeat; repetitions: Infinity"
+          gesture-handler
+        >
+        </a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
